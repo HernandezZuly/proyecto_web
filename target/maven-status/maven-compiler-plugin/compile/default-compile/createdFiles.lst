@@ -1,0 +1,10 @@
+controller\Daviplata.class
+controller\Nequi.class
+model\DaviplataDAO.class
+model\NequiVO.class
+model\UsuarioDAO.class
+model\DaviplataVO.class
+model\UsuarioVO.class
+controller\Usuario.class
+model\Conexion.class
+model\NequiDAO.class
