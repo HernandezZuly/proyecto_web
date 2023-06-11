@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shotcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Formulario Usuario</title>
+    <title>Retirar</title>
 </head>
 <body>
     <header>
-        <a class="logo">Formulario Usuario</a>
-        <input type="checkbox" id="menu-bar">
+        <a class="logo">Retirar Dinero</a>
+         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
             <nav class="navbar">
-                <a href="usuario?accion=listar">Volver</a>
+                <a href="nequi?accion=dashboard">Atrás</a>
             </nav>
     </header>
     <section class="formulario" id="formulario">
         <div class="image">
-            <img src="assets/img/iconoConsulta.png" alt="imagen">
+            <img src="assets/img/iconoRetirar.png" alt="imagen">
         </div>
-        <form action="usuario" method="post">
-            <h1 class="heading">Eliminar Registro</h1>
+        <form action="nequi" method="post">
+            <h1 class="heading">Retiros</h1>
                 <div class="inputcaja">
-                    <p>¿Esta seguro que quiere eliminar este registro?</p>
+                    <input type="int" name="retiro" required>
+                    <label>Valor del retiro</label>
                 </div>
-                <button type="submit" class="btn" name="accion" value="eliminar">ELIMINAR</button>
+                <button type="submit" name="accion" value="actualizarRetiro" class="btn">Realizar Retiro</button>
         </form>
     </section>
     </section>

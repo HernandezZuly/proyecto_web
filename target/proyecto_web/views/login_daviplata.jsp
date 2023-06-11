@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="shotcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="shotcut icon" href="assets/img/logo.png" type="image/x-icon">
     <title>Daviplata</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
     </header>
     <section class="formulario" id="formulario">
         <div class="image">
-            <img src="img/loginDaviplata.png" alt="imagen del login">
+            <img src="assets/img/loginDaviplata.png" alt="imagen del login">
         </div>
         <form action="bolsillo" method="post">
             <h1 class="heading">Iniciar Sesión</h1>

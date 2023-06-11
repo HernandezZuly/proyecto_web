@@ -136,21 +136,4 @@ public class UsuarioDAO {
         return r;
     }
 
-    public int eliminar(UsuarioVO usuario) throws SQLException{
-        sql = "DELETE FROM Usuario WHERE idUsuario=?";
-        try {
-            con = Conexion.conectar(); //abrir conexión
-            ps = con.prepareStatement(sql); //preparar sentencia
-            System.out.println(ps);
-            ps.executeUpdate(); //Ejecutar sentencia
-            ps.close(); //cerrar sentencia
-            System.out.println("Se elimino un registro correctamente");
-        } catch (Exception e) {
-            System.out.println("Error en la eliminación " + e.getMessage() .toString());
-        }
-        finally{
-            con.close(); //cerrando conexión
-        }
-        return r;
-    }
 }

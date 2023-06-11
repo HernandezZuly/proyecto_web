@@ -33,9 +33,6 @@ public class Nequi extends HttpServlet {
             case "nequi":
                 nequi(req, resp);
             break;
-            case "eliminarForm":
-                eliminarForm(req,resp);
-            break;
             case "abrirForm":
                 abrirForm(req,resp);
             break;
@@ -58,9 +55,6 @@ public class Nequi extends HttpServlet {
             break;
             case "editar":
                 editar(req,resp);
-            break;
-            case "eliminar":
-                eliminar(req,resp);
             break;
         }
     }
@@ -107,15 +101,6 @@ public class Nequi extends HttpServlet {
             System.out.println("El formulario Nequi ha sido abierto");
         }catch(Exception e){
             System.out.println("El formulario Nequi NO ha sido abierto "+e.getMessage().toString());
-        }
-    }
-
-    private void eliminarForm (HttpServletRequest req, HttpServletResponse resp) {
-        try{
-            req.getRequestDispatcher("views/eliminarNequi.jsp").forward(req, resp);
-            System.out.println("La vista eliminarNequi ha sido abierto");
-        }catch(Exception e){
-            System.out.println("La vista eliminarNequi NO ha sido abierto "+e.getMessage().toString());
         }
     }
 
@@ -201,15 +186,6 @@ private void editar(HttpServletRequest req, HttpServletResponse resp) {
         System.out.println("Registro actualizado correctamente en la tabla de Nequi");
     } catch (Exception e) {
         System.out.println("Error en la actualización del registro en la tabla de Nequi "+e.getMessage().toString());
-    }
-}
-
-private void eliminar(HttpServletRequest req, HttpServletResponse resp) {
-    try {
-        nd.eliminar(n);
-        System.out.println("Se elimino correctamente");
-    } catch (Exception e) {
-        System.out.println("Error laeliminación del registro "+e.getMessage().toString());
     }
 }
 

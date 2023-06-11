@@ -21,8 +21,8 @@
                 <a href="usuario?accion=abrirForm">Regístrese</a>
             </nav>
     </header>
-    <section class="formulario" id="formulario">
-        <h1 class="heading">Usuarios</h1><br>
+    <section class="tabla" id="tabla">
+        <h1 class="heading">Usuarios</h1>
         <div>
             <table>
                     <tr>

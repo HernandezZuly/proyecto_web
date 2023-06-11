@@ -8,27 +8,27 @@
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shotcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Formulario Daviplata</title>
+    <title>Consultas</title>
 </head>
 <body>
     <header>
-        <a class="logo">Formulario Daviplata</a>
+        <a class="logo">Consultar Saldo</a>
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
             <nav class="navbar">
-                <a href="daviplata?accion=listar">Volver</a>
+                <a href="nequi?accion=dashboard">Atrás</a>
             </nav>
     </header>
     <section class="formulario" id="formulario">
         <div class="image">
             <img src="assets/img/iconoConsulta.png" alt="imagen">
         </div>
-        <form action="daviplata" method="post">
-            <h1 class="heading">Eliminar Registro</h1>
+        <form action="nequi" method="post">
+            <h1 class="heading">Saldo Actual</h1>
                 <div class="inputcaja">
-                    <p>¿Esta seguro que quiere eliminar este registro?</p>
+                    <p>Cuenta con un saldo de</p>
+                    <p>$<%=request.getAttribute("saldoActual")%></p>
                 </div>
-                <button type="submit" class="btn" name="accion" value="eliminar">ELIMINAR</button>
         </form>
     </section>
     </section>

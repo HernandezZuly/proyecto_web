@@ -120,21 +120,4 @@ public class DaviplataDAO {
         return r;
     }
 
-    public int eliminar(DaviplataVO daviplata) throws SQLException{
-        sql = "DELETE FROM Daviplata WHERE idDaviplata=?";
-        try {
-            con = Conexion.conectar(); //abrir conexión
-            ps = con.prepareStatement(sql); //preparar sentencia
-            System.out.println(ps);
-            ps.executeUpdate(); //Ejecutar sentencia
-            ps.close(); //cerrar sentencia
-            System.out.println("Se elimino un registro de la tabla DaviplataVO correctamente");
-        } catch (Exception e) {
-            System.out.println("Error en la eliminación de un registro de la tabla DaviplataVO " + e.getMessage() .toString());
-        }
-        finally{
-            con.close(); //cerrando conexión
-        }
-        return r;
-    }
 }

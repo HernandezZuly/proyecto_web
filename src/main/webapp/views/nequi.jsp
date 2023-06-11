@@ -22,8 +22,8 @@
                 <a href="nequi?accion=volver">Atrás</a>
             </nav>
     </header>
-    <section class="formulario" id="formulario">
-        <h1 class="heading">Registros Nequi</h1><br>
+    <section class="tabla" id="tabla">
+        <h1 class="heading">Registros Nequi</h1>
         <div>
             <table>
                     <tr>

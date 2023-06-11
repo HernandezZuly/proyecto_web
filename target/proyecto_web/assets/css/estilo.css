@@ -377,6 +377,13 @@ header label{
 }
 
 /*Estilo de la tabla*/
+.tabla {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+}
 
 div table{
     display: center;
@@ -386,7 +393,7 @@ div table{
 
 div table tr th{
     background-color: var(--morado);
-    color: black;
+    color: white;
     border: 1px solid;
     border-color: var(--degradado);
     padding: 10px;
@@ -396,10 +403,4 @@ div table tr td{
     border: 2px solid;
     border-color: var(--degradado);
     padding: 5px;
-}
-
-@media(max-width:760px){
-    div table{
-        display: none;
-    }
 }

@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shotcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Formulario Nequi</title>
+    <title>Recargas</title>
 </head>
 <body>
     <header>
-        <a class="logo">Formulario Nequi</a>
-        <input type="checkbox" id="menu-bar">
+        <a class="logo">Recargar Cuenta</a>
+         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
             <nav class="navbar">
-                <a href="nequi?accion=listar">Volver</a>
+                <a href="nequi?accion=dashboard">Atrás</a>
             </nav>
     </header>
     <section class="formulario" id="formulario">
         <div class="image">
-            <img src="assets/img/iconoConsulta.png" alt="imagen">
+            <img src="assets/img/iconoRecargas.png" alt="imagen">
         </div>
         <form action="nequi" method="post">
-            <h1 class="heading">Eliminar Registro</h1>
+            <h1 class="heading">Recargar</h1>
                 <div class="inputcaja">
-                    <p>¿Esta seguro que quiere eliminar este registro?</p>
+                    <input type="int" name="valorRecarga" required>
+                    <label>Valor de la recarga</label>
                 </div>
-                <button type="submit" class="btn" name="accion" value="eliminar">ELIMINAR</button>
+                <button type="submit" name="accion" value="actualizarRecarga" class="btn">Realizar Recarga</button>
         </form>
     </section>
     </section>

@@ -27,9 +27,6 @@ public class Usuario extends HttpServlet{
             case "usuarios":
                 usuarios(req, resp);
             break;
-            case "eliminarForm":
-                eliminarForm(req,resp);
-            break;
             case "abrirForm":
                 abrirForm(req,resp);
             break;
@@ -52,9 +49,6 @@ public class Usuario extends HttpServlet{
             break;
             case "editar":
                 editar(req,resp);
-            break;
-            case "eliminar":
-                eliminar(req,resp);
             break;
         }
     }
@@ -83,15 +77,6 @@ public class Usuario extends HttpServlet{
             System.out.println("El formulario ha sido abierto");
         }catch(Exception e){
             System.out.println("El formulario NO ha sido abierto"+e.getMessage().toString());
-        }
-    }
-
-    private void eliminarForm (HttpServletRequest req, HttpServletResponse resp) {
-        try{
-            req.getRequestDispatcher("views/eliminarUsuario.jsp").forward(req, resp);
-            System.out.println("La vista ha sido abierto");
-        }catch(Exception e){
-            System.out.println("La vista NO ha sido abierto"+e.getMessage().toString());
         }
     }
 
@@ -205,13 +190,5 @@ public class Usuario extends HttpServlet{
         }
     }
 
-    private void eliminar(HttpServletRequest req, HttpServletResponse resp) {
-        try {
-            ud.eliminar(u);
-            System.out.println("Se elimino correctamente");
-        } catch (Exception e) {
-            System.out.println("Error laeliminación del registro "+e.getMessage().toString());
-        }
-    }
     
 }

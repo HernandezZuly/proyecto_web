@@ -22,8 +22,8 @@
                 <a href="daviplata?accion=volver">Atrás</a>
             </nav>
     </header>
-    <section class="formulario" id="formulario">
-        <h1 class="heading">Registros Daviplata</h1><BR>
+    <section class="tabla" id="tabla">
+        <h1 class="heading">Registros Daviplata</h1>
         <div>
             <table>
                     <tr>
@@ -36,7 +36,7 @@
                         <th>Acciones</th>
                     </tr>
 
-                    <c:forEach var="daviplata" items="${aviplata}">
+                    <c:forEach var="daviplata" items="${daviplata}">
 
                     <tr>
                         <td>${daviplata.getIdDaviplata()}</td>

@@ -33,9 +33,6 @@ public class Daviplata extends HttpServlet {
             case "daviplata":
                 daviplata(req, resp);
             break;
-            case "eliminarForm":
-                eliminarForm(req,resp);
-            break;
             case "abrirForm":
                 abrirForm(req,resp);
             break;
@@ -58,9 +55,6 @@ public class Daviplata extends HttpServlet {
             break;
             case "editar":
                 editar(req,resp);
-            break;
-            case "eliminar":
-                eliminar(req,resp);
             break;
         }
     }
@@ -107,15 +101,6 @@ public class Daviplata extends HttpServlet {
             System.out.println("El formulario daviplata ha sido abierto");
         }catch(Exception e){
             System.out.println("El formulario daviplata NO ha sido abierto "+e.getMessage().toString());
-        }
-    }
-
-    private void eliminarForm (HttpServletRequest req, HttpServletResponse resp) {
-        try{
-            req.getRequestDispatcher("views/eliminarDaviplata.jsp").forward(req, resp);
-            System.out.println("La vista eliminarDaviplata ha sido abierto");
-        }catch(Exception e){
-            System.out.println("La vista eliminarDaviplata NO ha sido abierto "+e.getMessage().toString());
         }
     }
 
@@ -201,15 +186,6 @@ private void editar(HttpServletRequest req, HttpServletResponse resp) {
         System.out.println("Registro actualizado correctamente en la tabla de Daviplata");
     } catch (Exception e) {
         System.out.println("Error en la actualización del registro en la tabla de Daviplata "+e.getMessage().toString());
-    }
-}
-
-private void eliminar(HttpServletRequest req, HttpServletResponse resp) {
-    try {
-        davd.eliminar(d);
-        System.out.println("Se elimino correctamente un registro de la tabla Daviplata");
-    } catch (Exception e) {
-        System.out.println("Error al eliminar un registro de la tabla Daviplata "+e.getMessage().toString());
     }
 }
 
