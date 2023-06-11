@@ -27,6 +27,15 @@ public class Nequi extends HttpServlet {
             case "loginNequi":
                 loginNequi(req, resp);
             break;
+            case "recargarForm":
+                recargarForm(req, resp);
+            break;
+            case "retiroForm":
+                retiroForm(req, resp);
+            break;
+            case "consultarForm":
+                consultarForm(req, resp);
+            break;
             case "volver":
                 volver(req, resp);
             break;
@@ -71,6 +80,33 @@ public class Nequi extends HttpServlet {
     private void volver (HttpServletRequest req, HttpServletResponse resp) {
         try{
             req.getRequestDispatcher("index.jsp").forward(req, resp);
+            System.out.println("La vista daviplata ha sido abierta");
+        }catch(Exception e){
+            System.out.println("La vista daviplata NO ha sido abierto "+e.getMessage().toString());
+        }
+    }
+
+    private void recargarForm (HttpServletRequest req, HttpServletResponse resp) {
+        try{
+            req.getRequestDispatcher("views/recargasNequi.jsp").forward(req, resp);
+            System.out.println("La vista daviplata ha sido abierta");
+        }catch(Exception e){
+            System.out.println("La vista daviplata NO ha sido abierto "+e.getMessage().toString());
+        }
+    }
+
+    private void retiroForm (HttpServletRequest req, HttpServletResponse resp) {
+        try{
+            req.getRequestDispatcher("views/sacarDineroNequi.jsp").forward(req, resp);
+            System.out.println("La vista daviplata ha sido abierta");
+        }catch(Exception e){
+            System.out.println("La vista daviplata NO ha sido abierto "+e.getMessage().toString());
+        }
+    }
+
+    private void consultarForm (HttpServletRequest req, HttpServletResponse resp) {
+        try{
+            req.getRequestDispatcher("views/consultarSaldoNequi.jsp").forward(req, resp);
             System.out.println("La vista daviplata ha sido abierta");
         }catch(Exception e){
             System.out.println("La vista daviplata NO ha sido abierto "+e.getMessage().toString());

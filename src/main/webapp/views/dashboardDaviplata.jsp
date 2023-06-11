@@ -25,19 +25,19 @@
                 <img src="assets/img/consultarSaldo.png" alt="imagen de consultar saldo">
                 <h3>Consultar saldo</h3>
                 <p>Aquí puede verificar cuanto saldo tiene disponible en su número de cuenta para realizar retiros, entre otras cosas</p>
-                <a href="#" class="btn">Consultar</a>
+                <a href="daviplata?accion=consultarForm" class="btn">Consultar</a>
             </div>
             <div class="caja">
                 <img src="assets/img/recargarCuenta.png" alt="imagen de recargar cuenta">
                 <h3>Recargar cuenta</h3>
                 <p>Aquí puede recargar la cantidad de dinero que quiera a su cuenta</p>
-                <a href="#" class="btn">Recargar</a>
+                <a href="daviplata?accion=recargarForm" class="btn">Recargar</a>
             </div>
             <div class="caja">
                 <img src="assets/img/sacarDinero.png" alt="imagen de sacar saldo">
                 <h3>Retirar dinero</h3>
                 <p>Aquí puede sacar la cantidad de dinero que desee de su cuenta</p>
-                <a href="#" class="btn">Retirar</a>
+                <a href="daviplata?accion=retiroForm" class="btn">Retirar</a>
             </div>
         </div>
     </section>

@@ -37,7 +37,7 @@
                 <img src="assets/img/sacarDinero.png" alt="imagen de sacar saldo">
                 <h3>Retirar dinero</h3>
                 <p>Aquí puede sacar la cantidad de dinero que desee de su cuenta</p>
-                <a name="accion" value="consultarSaldo" class="btn">Retirar</a>
+                <a href="nequi?accion=retiroForm" class="btn">Retirar</a>
             </div>
         </div>
     </section>

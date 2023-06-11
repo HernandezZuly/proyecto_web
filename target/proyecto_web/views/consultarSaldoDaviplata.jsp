@@ -8,38 +8,29 @@
     <link rel="stylesheet" href="assets/css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="shotcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Página Inicial</title>
+    <title>Consultas</title>
 </head>
 <body>
     <header>
-        <a class="logo">Página Inicial</a>
+        <a class="logo">Consultar Saldo</a>
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
             <nav class="navbar">
-                <a href="daviplata?accion=loginDaviplata">Volver</a>
+                <a href="daviplata?accion=dashboard">Atrás</a>
             </nav>
     </header>
-    <section class="especificaciones" id="especificaciones">
-        <div class="caja-contenedor">
-            <div class="caja">
-                <img src="assets/img/consultarSaldo.png" alt="imagen de consultar saldo">
-                <h3>Consultar saldo</h3>
-                <p>Aquí puede verificar cuanto saldo tiene disponible en su número de cuenta para realizar retiros, entre otras cosas</p>
-                <a href="daviplata?accion=consultarForm" class="btn">Consultar</a>
-            </div>
-            <div class="caja">
-                <img src="assets/img/recargarCuenta.png" alt="imagen de recargar cuenta">
-                <h3>Recargar cuenta</h3>
-                <p>Aquí puede recargar la cantidad de dinero que quiera a su cuenta</p>
-                <a href="daviplata?accion=recargarForm" class="btn">Recargar</a>
-            </div>
-            <div class="caja">
-                <img src="assets/img/sacarDinero.png" alt="imagen de sacar saldo">
-                <h3>Retirar dinero</h3>
-                <p>Aquí puede sacar la cantidad de dinero que desee de su cuenta</p>
-                <a href="daviplata?accion=retiroForm" class="btn">Retirar</a>
-            </div>
+    <section class="formulario" id="formulario">
+        <div class="image">
+            <img src="assets/img/iconoConsulta.png" alt="imagen">
         </div>
+        <form action="daviplata" method="post">
+            <h1 class="heading">Saldo Actual</h1>
+                <div class="inputcaja">
+                    <p>Cuenta con un saldo de</p>
+                    <p>$<%=request.getAttribute("saldoActual")%></p>
+                </div>
+        </form>
+    </section>
     </section>
     <div class="footer">
         <div class="caja-contenedor">
