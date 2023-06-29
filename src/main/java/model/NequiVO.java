@@ -3,7 +3,6 @@ package model;
 public class NequiVO {
     //Atributos
     private int idNequi;
-    private int idUsuario;
     private int retiro;
     private int saldoActual;
     private int valorRecarga;
@@ -13,9 +12,8 @@ public class NequiVO {
     public NequiVO() {
     }
     //Metodo constructor con parametros
-    public NequiVO(int idNequi, int idUsuario, int retiro, int saldoActual, int valorRecarga, Boolean estadoNequi) {
+    public NequiVO(int idNequi, int retiro, int saldoActual, int valorRecarga, Boolean estadoNequi) {
         this.idNequi = idNequi;
-        this.idUsuario = idUsuario;
         this.retiro = retiro;
         this.saldoActual = saldoActual;
         this.valorRecarga = valorRecarga;
@@ -28,12 +26,6 @@ public class NequiVO {
     }
     public void setIdNequi(int idNequi) {
         this.idNequi = idNequi;
-    }
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
     }
     public int getRetiro() {
         return retiro;

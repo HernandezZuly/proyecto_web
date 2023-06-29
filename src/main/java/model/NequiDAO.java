@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class NequiDAO {
     //Atributos para realizar operaciones sobre la BD
@@ -15,126 +13,63 @@ public class NequiDAO {
     String sql=null;
     int r; //cantidad de filas que devuelve una sentencia
     
-    public int registrar(NequiVO nequi) throws SQLException{
-        sql = "INSERT INTO Nequi (idUsuario, retiro, saldoActual, valorRecarga, estadoNequi) VALUES (?, ?, ?, ?, ?)";
+    public int recargarSaldo(NequiVO nequi) throws SQLException{
+        sql = "UPDATE Nequi SET valorRecarga = ?, saldoActual = saldoActual + valorRecarga WHERE idNequi = 1";
         try {
             con = Conexion.conectar(); //abrir conexión
             ps = con.prepareStatement(sql); //preparar sentencia
-            ps.setInt(1, nequi.getIdUsuario());
-            ps.setInt(2, nequi.getRetiro());
-            ps.setInt(3, nequi.getSaldoActual());
-            ps.setInt(4, nequi.getValorRecarga());
-            ps.setBoolean(5, nequi.getEstadoNequi());
+            ps.setInt(1, nequi.getValorRecarga());
             System.out.println(ps);
             ps.executeUpdate(); //Ejecutar sentencia
             ps.close(); //cerrar sentencia
-            System.out.println("Se registró en la tabla nequi correctamente");
+            System.out.println("Se recargo correctamente");
         } catch (Exception e) {
-            System.out.println("Error en el registro de la tabla nequi " + e.getMessage() .toString());
+            System.out.println("Error en la recarga " + e.getMessage() .toString());
         }
         finally{
             con.close(); //cerrando conexión
         }
-        return r;
+        return nequi.getSaldoActual();
     }
 
-    public List<NequiVO> listar() throws SQLException{
-        List<NequiVO> nequi=new ArrayList<>();
-        sql = "SELECT * FROM Nequi";
-        try {
-            con=Conexion.conectar();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery(sql);
-            while(rs.next()){
-                NequiVO r = new NequiVO();
-                //Escribir en el setter cada valor encontrado
-                r.setIdNequi(rs.getInt("idNequi"));
-                r.setIdUsuario(rs.getInt("idUsuario"));
-                r.setRetiro(rs.getInt("retiro"));
-                r.setSaldoActual(rs.getInt("saldoActual"));
-                r.setValorRecarga(rs.getInt("valorRecarga"));
-                r.setEstadoNequi(rs.getBoolean("estadoNequi"));
-                nequi.add(r);
-            }
-            ps.close();
-            System.out.println("consulta de la tabla Nequi exitosa");
-        } catch (Exception e) {
-            System.out.println("La consulta de la tabla Nequi no pudo ser ejecutada " + e.getMessage() .toString());
-        }
-        finally{
-            con.close();
-        }
-        return nequi;
-    }
-
-    public List<NequiVO> listarId() throws SQLException{
-        List<NequiVO> nequi=new ArrayList<>();
-        sql = "SELECT * FROM Nequi WHERE idNequi = '?' ";
-        try {
-            con=Conexion.conectar();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery(sql);
-            while(rs.next()){
-                NequiVO r = new NequiVO();
-                //Escribir en el setter cada valor encontrado
-                r.setIdNequi(rs.getInt("idNequi"));
-                r.setIdUsuario(rs.getInt("idUsuario"));
-                r.setRetiro(rs.getInt("retiro"));
-                r.setSaldoActual(rs.getInt("saldoActual"));
-                r.setValorRecarga(rs.getInt("valorRecarga"));
-                r.setEstadoNequi(rs.getBoolean("estadoNequi"));
-                nequi.add(r);
-            }
-            ps.close();
-            System.out.println("consulta de la tabla Nequi exitosa");
-        } catch (Exception e) {
-            System.out.println("La consulta de la tabla Nequi no pudo ser ejecutada " + e.getMessage() .toString());
-        }
-        finally{
-            con.close();
-        }
-        return nequi;
-    }
-
-    public int actualizar(NequiVO nequi) throws SQLException{
-        sql = "UPDATE Nequi SET idUsuario=?, retiro=?, saldoActual=?, valorRecarga=?, estadoNequi=? WHERE idNequi=?";
+    public int sacarPlata(NequiVO nequi) throws SQLException{
+        sql = "UPDATE Nequi SET  retiro = ?, saldoActual = saldoActual - retiro WHERE idNequi = 1";
         try {
             con = Conexion.conectar(); //abrir conexión
             ps = con.prepareStatement(sql); //preparar sentencia
-            ps.setInt(1, nequi.getIdUsuario());
-            ps.setInt(2, nequi.getRetiro());
-            ps.setInt(3, nequi.getSaldoActual());
-            ps.setInt(4, nequi.getValorRecarga());
-            ps.setBoolean(5, nequi.getEstadoNequi());
-            ps.setInt(6, nequi.getIdNequi());
-            System.out.println(sql);
-            ps.executeUpdate(); //Ejecutar sentencia
-            ps.close(); //cerrar sentencia
-            System.out.println("Se actualizo el registro de la tabla Nequi correctamente");
-        } catch (Exception e) {
-            System.out.println("Error en la actualización del registro de la tabla Nequi " + e.getMessage() .toString());
-        }
-        finally{
-            con.close(); //cerrando conexión
-        }
-        return r;
-    }
-
-    public int eliminar(NequiVO nequi) throws SQLException{
-        sql = "DELETE FROM Nequi WHERE idNequi=?";
-        try {
-            con = Conexion.conectar(); //abrir conexión
-            ps = con.prepareStatement(sql); //preparar sentencia
+            ps.setInt(1, nequi.getRetiro());
             System.out.println(ps);
             ps.executeUpdate(); //Ejecutar sentencia
             ps.close(); //cerrar sentencia
-            System.out.println("Se elimino un registro de la tabla Nequi correctamente");
+            System.out.println("El retiro correctamente");
         } catch (Exception e) {
-            System.out.println("Error en la eliminación de un registro de la tabla Nequi " + e.getMessage() .toString());
+            System.out.println("Error en el retiro " + e.getMessage() .toString());
         }
         finally{
             con.close(); //cerrando conexión
         }
-        return r;
+        return nequi.getSaldoActual();
+    }
+
+    public int  consultarSaldo() throws SQLException{
+        sql="select  saldoActual from Nequi" ;
+        NequiVO nequivo=new NequiVO();
+        try {
+            con=Conexion.conectar(); //abrir conexión
+            ps=con.prepareStatement(sql); //preparar sentencia
+            rs=ps.executeQuery(sql); //almacenar consultas
+            while(rs.next()){ //Se ejecuta cuando el rs este en funcionamiento
+            //El objeto de la clase VO - El valor que se va a retorar - rs
+                nequivo.setSaldoActual(rs.getInt("saldoActual"));
+            }
+            ps.close(); //cerrar sentencia
+            System.out.println("consulta ejecutada correctamente");
+        } catch (Exception e) {
+            System.out.println(" la consulta del saldo  no pudo ser ejecutado "+e.getMessage().toString());
+        }
+        finally{
+            con.close(); //cerrando conexión
+        }
+        return nequivo.getSaldoActual();
     }
 }

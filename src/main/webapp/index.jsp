@@ -16,8 +16,8 @@
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
         <nav class="navbar">
-            <a href="nequi?accion=listar">Nequi</a>
-            <a href="daviplata?accion=listar">Daviplata</a>
+            <a href="nequi?accion=loginNequi">Nequi</a>
+            <a href="daviplata?accion=loginDaviplata">Daviplata</a>
             <a href="usuario?accion=listar">Usuarios</a>
         </nav>
     </header>

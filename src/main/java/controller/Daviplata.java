@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -48,9 +47,6 @@ public class Daviplata extends HttpServlet {
             case "editarForm":
                 editarForm(req,resp);
             break;
-            case "listar":
-                listar(req,resp);
-            break;
         }
     }
     @Override
@@ -59,12 +55,6 @@ public class Daviplata extends HttpServlet {
         String a=req.getParameter("accion");
 
         switch (a) {
-            case "add":
-                add(req,resp);
-            break;
-            case "editar":
-                editar(req,resp);
-            break;
         }
     }
 
@@ -142,8 +132,6 @@ public class Daviplata extends HttpServlet {
 
     private void editarForm (HttpServletRequest req, HttpServletResponse resp) {
         try{
-            List daviplata=davd.listar();
-            req.setAttribute("daviplata", daviplata);
             req.getRequestDispatcher("views/editarDaviplata.jsp").forward(req, resp);
             System.out.println("El formulario editarDaviplata ha sido abierto");
         }catch(Exception e){
@@ -153,77 +141,6 @@ public class Daviplata extends HttpServlet {
 
 /////////////////////////////////////////////////
 
-private void listar(HttpServletRequest req, HttpServletResponse resp) {
-    try {
-        List daviplata=davd.listar();
-        req.setAttribute("daviplata", daviplata);
-        daviplata(req, resp);
-        System.out.println("Datos listados correctamente");
-    } catch (Exception e) {
-        System.out.println("Hay problemas al listar los datos "+e.getMessage().toString());
-    }
-}
-
-private void add(HttpServletRequest req, HttpServletResponse resp) {
-    if(req.getParameter("idUsuario")!=null){
-        d.setIdUsuario(Integer.parseInt(req.getParameter("idUsuario")));
-    }
-    if(req.getParameter("retiro")!=null){
-        d.setRetiro(Integer.parseInt(req.getParameter("retiro")));
-    }
-    if(req.getParameter("saldoActual")!=null){
-                        //Se utiliza para convertilo en tipo int
-        d.setSaldoActual(Integer.parseInt(req.getParameter("saldoActual")));
-    }
-    if(req.getParameter("valorRecarga")!=null){
-        d.setValorRecarga(Integer.parseInt(req.getParameter("valorRecarga")));
-    }
-    if(req.getParameter("estadoDaviplata")!=null){
-        d.setEstadoDaviplata(true);
-    }
-    else{
-        d.setEstadoDaviplata(false);
-    }
-    listar(req, resp);
-    try {
-        davd.registrar(d);
-        System.out.println("Registro insertado correctamente a la tabla Daviplata");
-    } catch (Exception e) {
-        System.out.println("Error en la inserción de un registro a la tabla Daviplata "+e.getMessage().toString());
-    }
-}
-
-private void editar(HttpServletRequest req, HttpServletResponse resp) {
-    if(req.getParameter("idDaviplata")!=null){
-        d.setIdUsuario(Integer.parseInt(req.getParameter("idDaviplata")));
-    }
-    if(req.getParameter("idUsuario")!=null){
-        d.setIdUsuario(Integer.parseInt(req.getParameter("idUsuario")));
-    }
-    if(req.getParameter("retiro")!=null){
-        d.setRetiro(Integer.parseInt(req.getParameter("retiro")));
-    }
-    if(req.getParameter("saldoActual")!=null){
-                        //Se utiliza para convertilo en tipo int
-        d.setSaldoActual(Integer.parseInt(req.getParameter("saldoActual")));
-    }
-    if(req.getParameter("valorRecarga")!=null){
-        d.setValorRecarga(Integer.parseInt(req.getParameter("valorRecarga")));
-    }
-    if(req.getParameter("estadoDaviplata")!=null){
-        d.setEstadoDaviplata(true);
-    }
-    else{
-        d.setEstadoDaviplata(false);
-    }
-    listar(req, resp);
-    try {
-        davd.actualizar(d);
-        System.out.println("Registro actualizado correctamente en la tabla de Daviplata");
-    } catch (Exception e) {
-        System.out.println("Error en la actualización del registro en la tabla de Daviplata "+e.getMessage().toString());
-    }
-}
 
 }
 

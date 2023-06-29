@@ -27,7 +27,7 @@
             <h1 class="heading">Saldo Actual</h1>
                 <div class="inputcaja">
                     <p>Cuenta con un saldo de</p>
-                    <p>$<%=request.getAttribute("saldoActual")%></p>
+                    <p>$ <%=request.getAttribute("consulta")%></p>
                 </div>
         </form>
     </section>

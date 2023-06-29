@@ -3,7 +3,6 @@ package model;
 public class DaviplataVO {
     //Atributos
     private int idDaviplata;
-    private int idUsuario;
     private int retiro;
     private int saldoActual;
     private int valorRecarga;
@@ -13,9 +12,8 @@ public class DaviplataVO {
     public DaviplataVO() {
     }
     //Metodo constructor con parametros
-    public DaviplataVO(int idDaviplata, int idUsuario, int retiro, int saldoActual, int valorRecarga, Boolean estadoDaviplata) {
+    public DaviplataVO(int idDaviplata, int retiro, int saldoActual, int valorRecarga, Boolean estadoDaviplata) {
         this.idDaviplata = idDaviplata;
-        this.idUsuario = idUsuario;
         this.retiro = retiro;
         this.saldoActual = saldoActual;
         this.valorRecarga = valorRecarga;
@@ -28,12 +26,6 @@ public class DaviplataVO {
     }
     public void setIdDaviplata(int idDaviplata) {
         this.idDaviplata = idDaviplata;
-    }
-    public int getIdUsuario() {
-        return idUsuario;
-    }
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
     }
     public int getRetiro() {
         return retiro;

@@ -16,7 +16,7 @@
          <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
             <nav class="navbar">
-                <a href="nequi?accion=listar">Atrás</a>
+                <a href="nequi?accion=volver">Atrás</a>
             </nav>
     </header>
     <section class="formulario" id="formulario">
