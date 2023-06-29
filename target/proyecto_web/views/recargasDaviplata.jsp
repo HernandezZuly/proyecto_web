@@ -29,7 +29,7 @@
                     <input type="int" name="valorRecarga" required>
                     <label>Valor de la recarga</label>
                 </div>
-                <button type="submit" name="accion" value="actualizarRecarga" class="btn">Realizar Recarga</button>
+                <button type="submit" name="accion" value="recargar" class="btn">Realizar Recarga</button>
         </form>
     </section>
     <div class="footer">

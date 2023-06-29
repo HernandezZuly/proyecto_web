@@ -29,7 +29,7 @@
                     <input type="int" name="retiro" required>
                     <label>Valor del retiro</label>
                 </div>
-                <button type="submit" name="accion" value="actualizarRetiro" class="btn">Realizar Retiro</button>
+                <button type="submit" name="accion" value="retirar" class="btn">Realizar Retiro</button>
         </form>
     </section>
     </section>
